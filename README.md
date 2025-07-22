@@ -73,8 +73,8 @@ Follow the terminal instructions to select your output device. If you choose the
 > If you're not sure which output device to select, test each one or look it up in the Windows Sound settings to find the one playing Roblox audio.
 <br>
 
-Once selected, go to the Roblox window, equip your fishing rod, and hover your mouse over water. Make sure you are in first-person view and facing downward at the water. Then press **P** to start or pause the macro. Press **ESC** to stop it. Windowed mode works best.
+Once selected, go to the Roblox window, equip your fishing rod, and hover your mouse over water. Make sure you are in first-person view, facing downward, and in a quiet environment (optional but highly recommended). Set your Roblox volume to maximum. Then press **P** to start or pause the macro. Press **ESC** to stop it. Windowed mode works best.
 <br>
 
-> [!TIP]  
-> Use this macro in a quiet area with no loud background sounds. Set your Roblox volume to maximum. Avoid playing music or other audio while it's running.
+> [!NOTE]  
+> If detection doesn't work properly, edit the `SOUND_THRESHOLD` and `PLOP_THRESHOLD` values in the script’s config section based on the RMS levels printed in the terminal.
