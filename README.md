@@ -73,7 +73,7 @@ Follow the terminal instructions to select your output device. If you choose the
 > If you're not sure which output device to select, test each one or look it up in the Windows Sound settings to find the one playing Roblox audio.
 <br>
 
-Once selected, go to the Roblox window, equip your fishing rod, and hover your mouse over water. Press **P** to start or pause the macro. Press **ESC** to stop it. Windowed mode works best.
+Once selected, go to the Roblox window, equip your fishing rod, and hover your mouse over water. Make sure you are in first-person view and facing downward at the water. Then press **P** to start or pause the macro. Press **ESC** to stop it. Windowed mode works best.
 <br>
 
 > [!TIP]  
