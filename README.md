@@ -28,8 +28,8 @@ Within VSCode, run the following command by using <ins>VSCode's built-in termina
 1. `pip install soundcard numpy keyboard`
 <br>
 
-> [!WARNING]
-> This command will not work if Python was not added to PATH during installation.
+> [!WARNING]  
+> This command will not work if Python was not added to PATH during installation. If you messed this up, uninstall Python using the same installer and reinstall it. Make sure to check the box to add it to PATH.
 <br>
 <br>
 
