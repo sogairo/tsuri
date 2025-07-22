@@ -21,23 +21,12 @@ After installing VSCode, install the [Python extension](https://marketplace.visu
 
 Next, download and install the [latest version of Python](https://www.python.org/downloads/).
 
-> You must check the box that says "Add Python to PATH" during installation. If you skip this step, the program will not run.
+> You must check the box that says "Add python.exe to PATH" during installation. If you skip this step, the program will not run.
 
 **Once everything is set up, open VSCode's built-in terminal (not your system's terminal) and run the following command:**
 
 ```bash
 pip install soundcard numpy keyboard
-```
-
-This installs all required packages used in the script:
-
-```python
-import soundcard as sc
-import numpy as np
-import time
-import keyboard
-import ctypes
-import sys
 ```
 
 # How to Run
