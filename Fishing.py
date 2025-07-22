@@ -219,7 +219,7 @@ try:
             if high_count >= 2:
                 win32_mouse_click()
                 detection_count += 1
-                last_event_time_adjusted = None  # ← Pause timer until next splash
+                last_event_time_adjusted = None
                 update_debug(volume, detection_count, mic.name, "Running", "Caught!")
 
                 flush_start = time.time()
