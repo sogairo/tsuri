@@ -3,65 +3,78 @@
 This repository contains the source code for a macro designed for the Roblox game Rune Slayer that automates the fishing profession.
 
 > [!CAUTION]
-> I'm not sure if using this macro is bannable in Rune Slayer, so use it at your own risk. If you get banned for it, that's on you. You've been warned.
+> Using macros might be bannable in Rune Slayer, so use it at your own risk. If you get banned for it, my condolences. You've been warned.
+<br>
 
 # Table of Contents
 
 - [Setting up the program](#setting-up-the-program)
-- [How to run](#how-to-run)
 - [Usage guide](#usage-guide)
+<br>
 
 # Setting up the program
 
-First, download and install [Visual Studio Code](https://code.visualstudio.com/).
-
-After installing VSCode, install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the Extensions tab.
-
-Next, download and install the [latest version of Python](https://www.python.org/downloads/).
+Download and install the following onto your system:
+1. [Visual Studio Code](https://code.visualstudio.com/) and this [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) right after installing VSCode
+2. [The latest version of Python](https://www.python.org/downloads/)
+<br>
 
 > [!IMPORTANT]
-> You must check the box that says "☐ Add python.exe to PATH" during installation. If you skip this step, the program will not run.
+> You must check the box that says "☐ Add python.exe to PATH" during installation. If you skip this step, the next steps within VSCode will NOT work.
+<br>
+<br>
 
-Once everything is set up, open VSCode's built-in terminal by pressing `Ctrl + \`` (not your system's terminal) and run the following command:
+Within VSCode, run the following command by using <ins>VSCode's built-in terminal</ins> (`Ctrl + \`):
+1. `pip install soundcard numpy keyboard`
+<br>
 
-```bash
-pip install soundcard numpy keyboard
-```
 > [!WARNING]
 > This command will not work if Python was not added to PATH during installation.
+<br>
+<br>
 
+Also within VSCode, follow the following steps to fix the `fromstring()` error: 
+1. Paste this into the terminal to find the install location:
+   ```
+   pip show soundcard
+   ```
+   You’ll see something like:
+   ```
+   C:\Users\<USER>\AppData\Local\Programs\Python\Python313\Lib\site-packages
+   ```
 
-# How to Run
+2. Copy that `Location` path and add `\soundcard\mediafoundation.py` to the end of it. It should look like this:
+   ```
+   C:\Users\<USER>\AppData\Local\Programs\Python\Python313\Lib\site-packages\soundcard\mediafoundation.py
+   ```
 
-Open the script in VSCode.
+3. Paste that full path into the `Ctrl + P` search bar in VSCode to open the file directly.
 
-Press the green play arrow in the top right to run the script.
+4. Replace line 761 with:
+   ```python
+   chunk = numpy.frombuffer(_ffi.buffer(data_ptr, nframes*4*len(set(self.channelmap))), dtype='float32')
+   ```
 
-Once it starts, you'll be prompted in the terminal to enter your audio device index.  
-A list of available output devices will appear like this:
+5. Save the file and close it. (`Ctrl + S`)
+<br>
 
-```
-Available audio output devices:
-
-[0] Speakers (Realtek Audio)
-[1] Headphones (USB Audio Device)
-[2] Monitor (NVIDIA High Definition Audio)
-
-Enter output device index:
-```
-
-Click on the space beside `Enter output device index:` in the terminal and type the number that matches your device (0, 1, 2, etc), then press Enter.
-
-> [!TIP]
-> If you're not sure which one to use, test each device to see which one emits the Roblox game sound.
+> [!NOTE]
+> This fixes the `ValueError` caused by using `fromstring()` in NumPy 2.x.
+<br>
 
 # Usage guide
 
-For best results, use this macro in a quiet area without loud background sounds. Make sure your Roblox volume is set to maximum. Do not play music or any other audio in the background while using this, or it may interfere with detection.
+Open the script in VSCode and press the green play arrow in the top right to run it.
 
-When you run the script in VSCode, follow the instructions shown in the terminal. You will be asked to select your output device. If you choose the wrong one, the program will not work properly as it relies on the system's output device to function.
+Follow the terminal instructions to select your output device. If you choose the wrong one, the macro won't work since it relies on system audio.
+<br>
 
-After selecting your audio device index, switch to the Roblox window and press **P** to start or pause the macro. Press **ESC** to terminate the program. Roblox does not need to be maximized. Running it in windowed mode gives the best results.
+> [!TIP]  
+> If you're not sure which output device to select, test each one or look it up in the Windows Sound settings to find the one playing Roblox audio.
+<br>
 
-> [!IMPORTANT]
-> You must be holding the fishing rod and hovering your mouse over water when you press P, or the macro will not work correctly.
+Once selected, go to the Roblox window, equip your fishing rod, and hover your mouse over water. Press **P** to start or pause the macro. Press **ESC** to stop it. Windowed mode works best.
+<br>
+
+> [!TIP]  
+> Use this macro in a quiet area with no loud background sounds. Set your Roblox volume to maximum. Avoid playing music or other audio while it's running.
